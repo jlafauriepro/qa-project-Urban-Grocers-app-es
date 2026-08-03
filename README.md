@@ -2,23 +2,23 @@
 
 # 
 
-##### Proyecto de automatización de pruebas para el endpoint de creación de kits de Urban Grocers.
+# Proyecto de automatización de pruebas para el endpoint de creación de kits de Urban Grocers.
 
-##### 
+# 
 
-##### \## Tecnologías
+# \## Tecnologías
 
-##### \- Python 3.14
+# \- Python 3.14
 
-##### \- Pytest
+# \- Pytest
 
-##### \- Requests
+# \- Requests
 
-##### 
+# 
 
-##### \## Cómo ejecutar las pruebas
+# \## Cómo ejecutar las pruebas
 
-##### 1\. Instalar dependencias: `pip install requests pytest`
+# 1\. Instalar dependencias: `pip install requests pytest`
 
-##### 2\. Ejecutar pruebas: `pytest create\\\_kit\\\_name\\\_kit\\\_test.py -v`
+# 2\. Ejecutar pruebas: `pytest create\_kit\_name\_kit\_test.py -v`
 
