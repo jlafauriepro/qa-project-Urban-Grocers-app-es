@@ -20,6 +20,19 @@ Urban Grocers es una aplicación de delivery. El objetivo es automatizar la vali
 | 8 | Parámetro `name` ausente en el body | 400 Bad Request |
 | 9 | Tipo numérico en lugar de string | 400 Bad Request |
 
+## Bugs encontrados en la API
+
+La ejecución de las pruebas reveló **4 defectos** en la API de Urban Grocers. Los tests están diseñados correctamente conforme a la especificación; los fallos indican comportamiento incorrecto del servidor:
+
+| # | Caso | Esperado | Obtenido | Conclusión |
+|---|------|----------|----------|------------|
+| 3 | Nombre vacío (0 chars) | 400 | 201 | La API acepta nombres vacíos — bug |
+| 4 | Nombre con 512 chars | 400 | 201 | La API no respeta el límite máximo — bug |
+| 8 | Sin parámetro `name` | 400 | 500 | Error interno del servidor — bug crítico |
+| 9 | Tipo numérico en `name` | 400 | 201 | La API no valida el tipo de dato — bug |
+
+> Los resultados completos están en [`test_results.txt`](./test_results.txt).
+
 ## Técnica de diseño
 
 - **Clases de equivalencia**: valores válidos (1–511 chars) vs. inválidos
@@ -34,11 +47,13 @@ Urban Grocers es una aplicación de delivery. El objetivo es automatizar la vali
 
 ## Estructura del proyecto
 
-- `create_kit_name_kit_test.py` — casos de prueba
-- `sender_stand_request.py` — funciones para enviar requests a la API
-- `data.py` — datos de prueba centralizados
-- `configuration.py` — configuración de la URL base
-- `test_results.txt` — resultados de ejecución
+```
+create_kit_name_kit_test.py   — casos de prueba
+sender_stand_request.py       — funciones para enviar requests a la API
+data.py                       — datos de prueba centralizados
+configuration.py              — configuración de la URL base
+test_results.txt              — resultados de ejecución
+```
 
 ## Cómo ejecutar las pruebas
 
